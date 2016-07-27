@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Page Content -->
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Shop Name</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Category 1</a>
+                <a href="#" class="list-group-item">Category 2</a>
+                <a href="#" class="list-group-item">Category 3</a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+              <% @services.each do |service| %>
+                  <div class="col-sm-4 col-lg-4 col-md-4">
+                      <div class="thumbnail">
+                          <img src="http://placehold.it/320x150" alt="">
+                          <div class="caption">
+                              <h4 class="pull-right">$<%= service.price %></h4>
+                              <h4><%= link_to truncate(service.title, length: 35), service_path(service) %></h4>
+                              <p><%= truncate(service.description, length: 150) %></p>
+
+                          </div>
+                          <div class="ratings">
+                              <p class="pull-right"><%= service.visit_count%> visitas</p>
+                              <p>
+                                  <span class="glyphicon glyphicon-star"></span>
+                                  <span class="glyphicon glyphicon-star"></span>
+                                  <span class="glyphicon glyphicon-star"></span>
+                                  <span class="glyphicon glyphicon-star"></span>
+                                  <span class="glyphicon glyphicon-star"></span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              <% end %>
+            
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <h4><%= link_to '¿Quieres subir tu servicios?', new_service_path%></a></h4>
+                    <p>Anunciarte en servicios en un click es muy facil, solo tienes que hacer click en el boton de abajo</p>
+                    <%= link_to 'Subir Anuncio', new_service_path, class: 'btn btn-primary'%>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /.container -->
