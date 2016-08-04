@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
    has_many :comments
    has_many :services
+
+   enum role: [:guest,:user,:admin]
 end
