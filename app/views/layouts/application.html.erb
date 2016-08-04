@@ -15,7 +15,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<section class="container">
+<%= render 'layouts/navbar' %>
+<section class="container container-margin-top">
+<!--   <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> -->
 	<%= yield %>
 </section>
 

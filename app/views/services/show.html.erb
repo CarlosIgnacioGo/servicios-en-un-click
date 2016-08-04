@@ -38,56 +38,44 @@
         <div class="well">
 
             <div class="text-right">
-                <a class="btn btn-success">Leave a Review</a>
+                <%= form_for([@service,@comment]) do |f| %>
+                  <% if @comment.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+                      <ul>
+                      <% @comment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+                  <div class="field">
+                    <%= f.text_area :body, class: 'form-control'%>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit 'Comentar', class: 'btn btn-success btn-margin' %>
+                  </div>
+                <% end %>
             </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    Anonymous
-                    <span class="pull-right">10 days ago</span>
-                    <p>This product was great in terms of quality. I would definitely buy another!</p>
+            
+            <% @service.comments.each do |comment| %>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <%=comment.user.email%>
+                        <span class="pull-right">10 days ago</span>
+                        <p><%= comment.body %></p>
+                    </div>
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    Anonymous
-                    <span class="pull-right">12 days ago</span>
-                    <p>I've alredy ordered another one!</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    Anonymous
-                    <span class="pull-right">15 days ago</span>
-                    <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                </div>
-            </div>
+            <%end%>
 
         </div>
-
     </div>
-
 </div>

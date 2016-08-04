@@ -1,0 +1,46 @@
+<section class="intro-header">
+	<div class="jumbotron">
+	  <h1 class="text-center">Hello, world!</h1>
+	  <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eum molestiae architecto dolorem totam dolore.</p>
+	  <section class="row">
+	  	<section class="col-md-6 col-md-offset-3">
+	  		<div class="input-group input-group-lg">
+	  		    <input type="text" class="form-control" placeholder="Ej. Gafiter, electricista, guardia, reposteria">
+	  		    <span class="input-group-btn ">
+	  		    <button class="btn btn-primary" type="button">Buscar</button>
+	  		  </span>
+	  		</div><!-- /input-group -->
+	  	</section>
+	  </section>
+	</div>
+</section>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+          <% @services.each do |service| %>
+              <div class="col-sm-3 col-lg-3 col-md-3">
+                  <div class="thumbnail">
+                      <img src="http://placehold.it/320x150" alt="">
+                      <div class="caption">
+                          <h4 class="pull-right">$<%= service.price %></h4>
+                          <h4><%= link_to truncate(service.title, length: 19), service_path(service) %></h4>
+                          <p><%= truncate(service.description, length: 150) %></p>
+
+                      </div>
+                      <div class="ratings">
+                          <p class="pull-right"><%= service.visit_count%> visitas</p>
+                          <p>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          <% end %>
+        </div>
+    </div>
+</div>

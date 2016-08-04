@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <!-- Page Content -->
     <div class="row">
@@ -19,7 +18,7 @@
                           <img src="http://placehold.it/320x150" alt="">
                           <div class="caption">
                               <h4 class="pull-right">$<%= service.price %></h4>
-                              <h4><%= link_to truncate(service.title, length: 35), service_path(service) %></h4>
+                              <h4><%= link_to truncate(service.title, length: 19), service_path(service) %></h4>
                               <p><%= truncate(service.description, length: 150) %></p>
 
                           </div>
@@ -45,4 +44,3 @@
             </div>
         </div>
     </div>
-<!-- /.container -->

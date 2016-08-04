@@ -35,6 +35,14 @@
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
+  <div>
+    <% @category.each do |category| %>
+      <li>
+        <%= f.check_box 'category_ids', {multiple: true}, category.id, [] %>
+          <span><%=category.name%></span>
+      </li>
+    <%end%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

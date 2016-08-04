@@ -1,0 +1,16 @@
+LOG:  database system was shut down at 2016-07-27 04:07:21 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-07-28 13:37:46 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  column services.create_at does not exist at character 47
+HINT:  Perhaps you meant to reference the column "services.created_at".
+STATEMENT:  SELECT "services".* FROM "services"  ORDER BY "services"."create_at" ASC
+LOG:  stats_timestamp 2016-07-28 18:15:01.825963-04 is later than collector's time 2016-07-28 18:15:01.314268-04 for database 0

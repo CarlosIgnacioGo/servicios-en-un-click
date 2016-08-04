@@ -4,17 +4,20 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @services = Service.order(:created_at)
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
+    @service.update_visit_count
+    @comment = Comment.new
   end
 
   # GET /services/new
   def new
     @service = Service.new
+    @category = Category.all
   end
 
   # GET /services/1/edit
@@ -24,17 +27,19 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service = Service.new(service_params)
+    # @service = Service.new(service_params)
 
-    respond_to do |format|
-      if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
-        format.json { render :show, status: :created, location: @service }
-      else
-        format.html { render :new }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @service.save
+    #     format.html { redirect_to @service, notice: 'Service was successfully created.' }
+    #     format.json { render :show, status: :created, location: @service }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @service.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    render json:params
   end
 
   # PATCH/PUT /services/1
@@ -69,6 +74,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :description, :price, :address, :email, :phone, :visit_count)
+      params.require(:service).permit(:title, :description, :price, :address, :email, :phone, :category_ids [])
     end
 end
