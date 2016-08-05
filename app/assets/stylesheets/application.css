@@ -21,3 +21,26 @@
 .container-margin-top{
 	margin-top: 70px;
 }
+
+#notice_wrapper {
+  display: none;
+  left: 15px;
+  position: absolute;
+  top: 63px;
+  z-index: 999;
+  
+}
+
+.alert { background: rgba(255, 100, 5, 0.80); }
+.notice{ background:rgba(91, 192, 222, 0.80); }
+.alert, .notice {
+  color: #fff;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;    
+  padding: 15px 30px;
+  text-align: center;  
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}

@@ -14,3 +14,7 @@ ERROR:  column services.create_at does not exist at character 47
 HINT:  Perhaps you meant to reference the column "services.created_at".
 STATEMENT:  SELECT "services".* FROM "services"  ORDER BY "services"."create_at" ASC
 LOG:  stats_timestamp 2016-07-28 18:15:01.825963-04 is later than collector's time 2016-07-28 18:15:01.314268-04 for database 0
+LOG:  database system was shut down at 2016-08-05 11:10:03 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -17,7 +17,13 @@
 <body>
 <%= render 'layouts/navbar' %>
 <section class="container container-margin-top">
-<%= flash[:alert] %>
+<div id="notice_wrapper">
+  <% if notice %>
+     <p class="notice"><%= notice %></p>
+  <% elsif alert %>  
+     <p class="alert"><%= alert %></p>
+  <% end %>   
+</div>
 <!--   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> -->
 	<%= yield %>
