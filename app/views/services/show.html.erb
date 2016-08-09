@@ -13,7 +13,8 @@
     <div class="col-md-9">
 
         <div class="thumbnail">
-            <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+            <!-- <img class="img-responsive" src="http://placehold.it/800x300" alt=""> -->
+            <%= image_tag @service.photo %>
             <div class="caption-full">
                 <h4 class="pull-right">$<%=@service.price%></h4>
                 <h4><%= @service.title%></h4>
