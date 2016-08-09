@@ -12,6 +12,8 @@ class Ability
     can :read, Service
     can :create, Service
     can :update, Service
+    
+    can :create, Comment
   elsif user.guest?
     can :read, Service
   else

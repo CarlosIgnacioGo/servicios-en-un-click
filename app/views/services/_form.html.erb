@@ -10,11 +10,7 @@
     </div>
   <% end %>
   <div class="form-group">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo%>
-  </div>
-  <div class="form-group">
-    <%= f.label :title %><br>
+    <%= f.label :title%><br>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
@@ -38,6 +34,10 @@
     <%= f.text_field :phone, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.label :photo, 'Sube una foto de tu servicio', class: 'label-file btn btn-success'%><br>
+    <%= f.file_field :photo, class: 'input-file'%>
+  </div>
+  <div class="form-group">
     <h3>Pon tu servicios en una o varios categorias</h3>
     <% @category.each do |category| %>
       <li>
@@ -50,5 +50,7 @@
     <%= f.submit 'Subir servicio', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+
 
 

@@ -14,6 +14,10 @@
  *= require_self
  */
 
+li{
+  list-style: none;
+}
+
 .btn-margin {
     margin: 5px 0; 
 }
@@ -44,3 +48,61 @@
   text-align: center;  
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
+
+
+.label-file{
+
+}
+
+.input-file{
+  display: none !important;
+}
+
+.ui-helper-hidden-accessible{
+  display: none;
+}
+
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+  .ui-autocomplete > li{
+    padding: 5px 10px;
+  }
+
+  .ui-autocomplete > li:hover{
+    background: #337ab7;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
