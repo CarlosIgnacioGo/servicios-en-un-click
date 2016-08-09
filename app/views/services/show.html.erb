@@ -71,7 +71,7 @@
                         <span class="glyphicon glyphicon-star"></span>
                         <span class="glyphicon glyphicon-star-empty"></span>
                         <%=comment.user.email%>
-                        <span class="pull-right">10 days ago</span>
+                        <span class="pull-right"><%= time_ago_in_words(comment.created_at) %></span>
                         <p><%= comment.body %></p>
                     </div>
                 </div>
