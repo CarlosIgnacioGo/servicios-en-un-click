@@ -34,3 +34,18 @@ LOG:  database system was shut down at 2016-08-09 10:00:53 CLT
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+FATAL:  role "root" does not exist
+ERROR:  column "name" does not exist at character 39
+STATEMENT:  SELECT COUNT(*) FROM "tickets" WHERE (name LIKE '%fadafsdf%')
+ERROR:  column "name" does not exist at character 39
+STATEMENT:  SELECT COUNT(*) FROM "tickets" WHERE (name LIKE '%%')
+ERROR:  column tickets.name does not exist at character 41
+STATEMENT:  SELECT "tickets".* FROM "tickets" WHERE "tickets"."name" = 'c'

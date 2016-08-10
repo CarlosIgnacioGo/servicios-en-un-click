@@ -17,6 +17,7 @@ class Ability
   elsif user.guest?
     can :read, Service
     can :read, Comment
+    can :read, Category
   else
     can :read, :all
   end

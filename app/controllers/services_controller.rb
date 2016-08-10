@@ -6,7 +6,8 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.order(:created_at)
+    @services = Service.order(created_at: :desc)
+    @categories = Category.all
   end
 
   # GET /services/1
@@ -14,6 +15,7 @@ class ServicesController < ApplicationController
   def show
     @service.update_visit_count
     @comment = Comment.new
+    @categories = Category.all
   end
 
   # GET /services/new

@@ -7,5 +7,7 @@ class Service < ActiveRecord::Base
 		self.update(visit_count: self.visit_count += 1)
 	end
 
+	delegate :email, to: :user, prefix: :cat
+
 	mount_uploader :photo, PhotoUploader
 end
