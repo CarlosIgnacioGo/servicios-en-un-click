@@ -49,3 +49,11 @@ ERROR:  column "name" does not exist at character 39
 STATEMENT:  SELECT COUNT(*) FROM "tickets" WHERE (name LIKE '%%')
 ERROR:  column tickets.name does not exist at character 41
 STATEMENT:  SELECT "tickets".* FROM "tickets" WHERE "tickets"."name" = 'c'
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-08-10 12:47:44 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

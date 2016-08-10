@@ -1,6 +1,8 @@
-<p class="lead">Categorias</p>
+
 <div class="list-group">
     <% @categories.each do |category| %>
-        <%= link_to category.name, category, class: 'list-group-item' %>
+        <%= link_to category, class: 'list-group-item' do %>
+		   <%= category.name %> <span class="badge"><%= category.services.size %></span>
+		<% end %>
     <%end%>
 </div>
