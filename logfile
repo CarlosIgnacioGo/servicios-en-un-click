@@ -57,3 +57,9 @@ LOG:  database system was shut down at 2016-08-10 12:47:44 CLT
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  column "name" does not exist at character 40
+STATEMENT:  SELECT COUNT(*) FROM "services" WHERE (name LIKE '%%')
+ERROR:  column "name" does not exist at character 40
+STATEMENT:  SELECT COUNT(*) FROM "services" WHERE (name LIKE '%%')
+ERROR:  column "name" does not exist at character 40
+STATEMENT:  SELECT COUNT(*) FROM "services" WHERE (name LIKE '%Shoes%')

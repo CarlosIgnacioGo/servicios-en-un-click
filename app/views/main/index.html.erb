@@ -4,12 +4,12 @@
 	  <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eum molestiae architecto dolorem totam dolore.</p>
 	  <section class="row">
 	  	<section class="col-md-6 col-md-offset-3">
-	  		<div class="input-group input-group-lg" >
-	  		    <input type="text" class="form-control" id="input-search" placeholder="Ej. Gafiter, electricista, guardia, reposteria">
-	  		    <span class="input-group-btn ">
-	  		    <button class="btn btn-primary" type="button">Buscar</button>
-	  		  </span>
-	  		</div><!-- /input-group -->
+            <%= form_tag services_path, :method => 'get', class: "input-group input-group-lg" do %>
+              <%= text_field_tag "input_search", nil, class: 'form-control' %>
+              <span class="input-group-btn ">
+                <%= submit_tag "Buscar", class: "btn btn-primary" %>
+              </span>
+            <% end %>
 	  	</section>
 	  </section>
 	</div>

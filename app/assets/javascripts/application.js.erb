@@ -18,7 +18,7 @@ $(document).ready(function() {
 	    var availableTags = 
 	      <%=Category.order(:name).map(&:name)%>
 	    
-	    $( "#input-search" ).autocomplete({
+	    $( "#input_search" ).autocomplete({
 	      source: availableTags
 	    });
   	} );

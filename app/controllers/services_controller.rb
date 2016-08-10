@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.order(created_at: :desc)
+    @services = Service.search(params[:input_search]).order(:visit_count => :desc)
     @categories = Category.all
   end
 

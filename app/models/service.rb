@@ -10,4 +10,12 @@ class Service < ActiveRecord::Base
 	delegate :email, to: :user, prefix: :cat
 
 	mount_uploader :photo, PhotoUploader
+
+	def self.search(search)
+		if where("title LIKE ?","%#{search}%").size > 0
+			where("title LIKE ?","%#{search}%")			
+		else
+			all
+		end
+	end
 end
