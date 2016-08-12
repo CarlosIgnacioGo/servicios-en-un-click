@@ -1,21 +1,25 @@
 class ServicesController < ApplicationController
   load_and_authorize_resource
 
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, only: [:show, :edit, :update, :destroy, :publish]
 
   # GET /services
   # GET /services.json
   def index
-    @services = Service.search(params[:input_search]).order(:visit_count => :desc)
+    @services = Service.search(params[:input_search]).published.order(:visit_count => :desc)
     @categories = Category.all
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
-    @service.update_visit_count
-    @comment = Comment.new
-    @categories = Category.all
+    if @service.published?
+      @service.update_visit_count
+      @comment = Comment.new
+      @categories = Category.all
+    else
+      redirect_to root_path, notice: 'El servicio que buscas no existe.'
+    end
   end
 
   # GET /services/new
@@ -68,6 +72,16 @@ class ServicesController < ApplicationController
       format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def publish
+    @service.publish!
+    redirect_to admin_services_path
+  end
+
+  def unpublish
+    @service.unpublish!
+    redirect_to admin_services_path
   end
 
   private

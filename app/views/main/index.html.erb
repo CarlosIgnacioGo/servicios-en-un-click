@@ -44,3 +44,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    var tags = <%= Category.order(:name).map(&:name).to_json.html_safe %>
+
+    $( "#input_search" ).autocomplete({
+      source: tags
+    });
+</script>

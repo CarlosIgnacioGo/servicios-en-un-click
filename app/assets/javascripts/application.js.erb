@@ -1,28 +1,12 @@
-
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-	//Aparición y desaparición de los mensajes flash
-    $("#notice_wrapper").fadeIn("slow").delay(1000).fadeOut("slow");
 
-    $(".input-file").on("change",function(e){
-    	var file_name = e.target.value
 
-    	$(".label-file").text(file_name)
-    }) 
 
-    $( function() {
-	    var availableTags = 
-	      <%=Category.order(:name).map(&:name)%>
-	    
-	    $( "#input_search" ).autocomplete({
-	      source: availableTags
-	    });
-  	} );
-});
+  
 
 
 

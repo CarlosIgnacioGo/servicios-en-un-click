@@ -31,6 +31,9 @@
   <p class="alert"><%= alert %></p> -->
 	<%= yield %>
 </section>
-
+<script>
+  //Aparición y desaparición de los mensajes flash
+  $("#notice_wrapper").fadeIn("slow").delay(1000).fadeOut("slow");
+</script>
 </body>
 </html>

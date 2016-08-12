@@ -2,7 +2,7 @@
 <div class="list-group">
     <% @categories.each do |category| %>
         <%= link_to category, class: 'list-group-item' do %>
-		   <%= category.name %> <span class="badge"><%= category.services.size %></span>
+		   <%= category.name %> <span class="badge"><%= category.services.published.size %></span>
 		<% end %>
     <%end%>
 </div>

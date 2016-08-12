@@ -8,7 +8,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :services do 
+  resources :services do
+    member do
+      get 'publish'
+    end 
+    member do
+      get 'unpublish'
+    end 
     resources :comments
   end
   
