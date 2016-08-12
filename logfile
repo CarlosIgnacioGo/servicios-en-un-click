@@ -67,3 +67,7 @@ ERROR:  column "in_draft" does not exist at character 76
 STATEMENT:  SELECT "services".* FROM "services" WHERE (title LIKE '%hola%' AND state = in_draft)  ORDER BY "services"."visit_count" DESC
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 737) running in data directory "/usr/local/var/postgres"?
+LOG:  database system was shut down at 2016-08-12 08:09:08 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
