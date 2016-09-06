@@ -8,7 +8,6 @@
     <div class="col-md-9">
 
         <div class="thumbnail">
-            <!-- <img class="img-responsive" src="http://placehold.it/800x300" alt=""> -->
             <%= image_tag @service.photo %>
             <div class="caption-full">
                 <h4 class="pull-right">$<%=@service.price%></h4>
@@ -21,12 +20,8 @@
             <div class="ratings">
                 <p class="pull-right"><%= @service.visit_count %> visitas</p>
                 <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    4.0 stars
+                  <span id="average"></span>
+                  <span><%= @service.comments.count(:vote)%> veces calificado</span>
                 </p>
             </div>
         </div>
@@ -50,28 +45,54 @@
                   <div class="field">
                     <%= f.text_area :body, class: 'form-control'%>
                   </div>
-                  <div class="actions">
+                  <div class="field btn-group">
+                    <span id="voting" class="btn btn-success btn-start"></span>
                     <%= f.submit 'Comentar', class: 'btn btn-success btn-margin' %>
+                  </div>
+                  <div class="actions">
+                    
                   </div>
                 <% end %>
             </div>
             
-            <% @service.comments.each do |comment| %>
+            <% @service.comments.order(created_at: :desc).each do |comment| %>
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
                         <%=comment.user.email%>
+                        <span class="star-vote" id="star-<%= comment.id %>" data-score= <%= comment.vote %> ></span>
                         <span class="pull-right"><%= time_ago_in_words(comment.created_at) %></span>
                         <p><%= comment.body %></p>
                     </div>
                 </div>
             <%end%>
-
         </div>
     </div>
 </div>
+
+<script>
+
+  $('#average').raty({
+    path: '/assets/',
+    readOnly: true,
+    half:  true,
+    start: <%= @service.average %>
+  });
+
+  var star;
+  $.each($('.star-vote'), function( index, value ) {
+    star = $(value);
+    star.raty({
+      path: '/assets/',
+      readOnly: true,
+      start: star.data("score")
+    })
+  });
+
+  $('#voting').raty({
+    path: '/assets/',
+    scoreName: 'comment[vote]'
+  });
+
+ 
+</script>

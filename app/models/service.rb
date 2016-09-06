@@ -36,4 +36,12 @@ class Service < ActiveRecord::Base
 			transitions :from => :published, :to => :in_draft
 		end
 	end
+
+	def average
+		if comments.average(:vote).nil?
+			0
+		else 
+			comments.average(:vote).round(1)
+		end
+	end
 end

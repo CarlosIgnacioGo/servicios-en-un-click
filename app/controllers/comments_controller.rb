@@ -18,8 +18,11 @@ class CommentsController < ApplicationController
   def create
     @service = Service.find(params[:service_id])
     @comment = current_user.comments.build(comment_params)  
-    @comment.service = @service
+    unless @comment.vote.present?
+      @comment.vote = 0;
+    end
 
+    @comment.service = @service
 
     respond_to do |format|
       if @comment.save
@@ -66,6 +69,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:body, :user_id, :service_id)
+      params.require(:comment).permit(:body, :user_id, :service_id, :vote)
     end
 end
