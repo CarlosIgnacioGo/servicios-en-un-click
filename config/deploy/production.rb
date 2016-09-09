@@ -1,4 +1,4 @@
 set :stage, :production
 set :rails_env, :production
     
-server 'ip_del_server', user: 'ubuntu', roles: %w{web app db}, primary: true
+server '54.226.45.126', user: 'ubuntu', roles: %w{web app db}, primary: true

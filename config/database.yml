@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: servicios_en_un_click_production
-  username: servicios_en_un_click
+  username: ubuntu
   password: <%= ENV['SERVICIOS_EN_UN_CLICK_DATABASE_PASSWORD'] %>
