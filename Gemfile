@@ -40,7 +40,8 @@ gem 'active_skin'
 gem 'aasm'
 gem 'dotenv-rails'
 gem 'fog'
-
+gem 'puma'
+    
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -56,5 +57,12 @@ group :development do
   gem 'faker'
 
   gem 'awesome_print'
+
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-ssh-doctor', require: false
 end
 
