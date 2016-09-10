@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+gem 'dotenv-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -38,7 +39,6 @@ gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'aasm'
-gem 'dotenv-rails'
 gem 'fog'
 gem 'puma'
     
