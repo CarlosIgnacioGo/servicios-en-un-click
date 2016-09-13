@@ -40,7 +40,7 @@
 </div>
 
 <script>
-    var tags = <%= Category.order(:name).map(&:name).to_json.html_safe %>
+    var tags = <%= Service.order(:title).published.map(&:title).to_json.html_safe %>
 
     $( "#input_search" ).autocomplete({
       source: tags

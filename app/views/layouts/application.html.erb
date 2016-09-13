@@ -35,7 +35,7 @@
   //Aparición y desaparición de los mensajes flash
   $("#notice_wrapper").fadeIn("slow").delay(1000).fadeOut("slow");
 
-  var tags = <%= Category.order(:name).map(&:name).to_json.html_safe %>
+  var tags = <%= Service.order(:title).published.map(&:title).to_json.html_safe %>
 
   $( "#input_search_xs" ).autocomplete({
     source: tags
