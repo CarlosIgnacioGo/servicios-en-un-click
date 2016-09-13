@@ -8,7 +8,7 @@ ActiveAdmin.register Service do
 # or
 #
   permit_params do
-    permitted = [:title, :description,:price,:address,:email,:phone,:photo]
+    permitted = [:title, :description,:address,:email,:phone,:photo]
   end   
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
@@ -32,7 +32,6 @@ ActiveAdmin.register Service do
     f.inputs "Nuevo Service" do
       f.input :title
       f.input :description
-      f.input :price
       f.input :address
       f.input :photo 
     end

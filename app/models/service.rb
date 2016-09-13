@@ -17,8 +17,8 @@ class Service < ActiveRecord::Base
 
 	#
 	def self.search(search)
-		if search
-			where("title LIKE ? AND state = 'published'","%#{search}%")			
+		if search.present?
+			where("(services.title LIKE ? OR services.description LIKE ?) AND state = 'published'","%#{search}%", "%#{search}%")			
 		else
 			all
 		end

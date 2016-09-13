@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.img-search{
+  height: 150px !important;
+}
+
 li{
   list-style: none;
 }
@@ -52,11 +56,6 @@ li{
   padding: 15px 30px;
   text-align: center;  
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-
-.label-file{
-
 }
 
 .input-file{
@@ -111,7 +110,9 @@ li{
 
 .ratings{
   color: #3498db;
+  padding-bottom: 5px;
 }
+
 
 
 

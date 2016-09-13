@@ -8,22 +8,15 @@
           <% @category.services.published.each do |service| %>
               <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
-                      <img src="http://placehold.it/320x150" alt="">
+                      <img src="<%= service.photo %>" alt="" class="img-search">
                       <div class="caption">
-                          <h4 class="pull-right">$<%= service.price %></h4>
                           <h4><%= link_to truncate(service.title, length: 19), service_path(service) %></h4>
                           <p><%= truncate(service.description, length: 150) %></p>
 
                       </div>
                       <div class="ratings">
                           <p class="pull-right"><%= service.visit_count%> visitas</p>
-                          <p>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                          </p>
+                          <span><%= service.comments.count(:vote)%> veces calificado</span>
                       </div>
                   </div>
               </div>

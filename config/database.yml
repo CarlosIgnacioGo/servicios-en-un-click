@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: servicios_en_un_click_development
-  username: ubuntu
-  password: <%= ENV['SERVICIOS_EN_UN_CLICK_DATABASE_PASSWORD'] %>
+  username: carlosgomez
+  password: 221519
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
