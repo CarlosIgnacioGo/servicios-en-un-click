@@ -10,6 +10,17 @@ ActiveAdmin.register Service do
   permit_params do
     permitted = [:title, :description,:address,:email,:phone,:photo]
   end   
+
+  member_action :unpublish do
+    resource.unpublish!
+    redirect_to admin_services_path
+  end  
+
+  member_action :publish do
+    resource.publish!
+    redirect_to admin_services_path
+  end  
+
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
@@ -17,12 +28,12 @@ ActiveAdmin.register Service do
   index do
     selectable_column
     id_column
-    column :title
+    column :title    
     column  "Estado" do |service|
       if service.published?
-        link_to 'Despublicar', unpublish_service_path(service)
+        link_to 'Despublicar', unpublish_admin_service_path(service)
       else
-        link_to 'Publicar', publish_service_path(service)
+        link_to 'Publicar', publish_admin_service_path(service)
       end
     end
     actions

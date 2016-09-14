@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   }
 
   resources :services do
-    member do
-      get 'publish'
-    end 
-    member do
-      get 'unpublish'
-    end 
+    # member do
+    #   get 'publish'
+    # end 
+    # member do
+    #   get 'unpublish'
+    # end 
     resources :comments
   end
   

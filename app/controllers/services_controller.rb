@@ -74,15 +74,15 @@ class ServicesController < ApplicationController
     end
   end
 
-  def publish
-    @service.publish!
-    redirect_to admin_services_path
-  end
+  # def publish
+  #   @service.publish!
+  #   redirect_to admin_services_path
+  # end
 
-  def unpublish
-    @service.unpublish!
-    redirect_to admin_services_path
-  end
+  # def unpublish
+  #   @service.unpublish!
+  #   redirect_to admin_services_path
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
