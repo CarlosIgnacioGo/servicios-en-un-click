@@ -11,9 +11,19 @@
             <%= image_tag @service.photo %>
             <div class="caption-full">
                 <h4><%= @service.title%></h4>
-                <p><span class="glyphicon glyphicon-home"></span> <%=@service.address%></p>
-                <p><span class="glyphicon glyphicon-envelope"></span> <%=@service.email%></p>
-                <p><span class="glyphicon glyphicon-earphone"></span> <%=@service.phone%></p>
+                <p><span class="glyphicon glyphicon-earphone"></span> <%= @service.phone.present? ? "(+56) #{@service.phone}" : "No específica" %></p>
+                <p><span class="glyphicon glyphicon-phone-alt"></span> <%=@service.telephone.present? ? @service.telephone : "No específica" %></p>
+                <p><span class="glyphicon glyphicon-home"></span> <%= @service.address.present? ? @service.address : "No específica"%></p>
+                <p><span class="glyphicon glyphicon-envelope"></span> <%=@service.email.present? ? @service.email : "No específica"%></p>
+                <p><span class="glyphicon glyphicon-picture"></span> <%=@service.website.present? ? @service.website : "No específica"%></p>
+                <p><span class="glyphicon glyphicon-calendar"></span> Dias de atención: <%=@service.monday ? "Lunes" : "" %>
+                                                                                        <%=@service.tuesday ? "Martes" : "" %>
+                                                                                        <%=@service.wednesday ? "Miercoles" : "" %>
+                                                                                        <%=@service.thursday ? "Jueves" : "" %>
+                                                                                        <%=@service.friday ? "Viernes" : "" %>
+                                                                                        <%=@service.saturday ? "Sabado" : "" %>
+                                                                                        <%=@service.sunday ? "Domingo" : "" %>
+                                                                                        </p>
                 <p><%= @service.description %></p>
             </div>
             <div class="ratings">

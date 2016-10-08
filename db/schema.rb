@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912222840) do
+ActiveRecord::Schema.define(version: 20161008043132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,15 @@ ActiveRecord::Schema.define(version: 20160912222840) do
     t.integer  "user_id"
     t.string   "photo"
     t.string   "state",       default: "in_draft"
+    t.string   "telephone"
+    t.string   "website"
+    t.boolean  "monday"
+    t.boolean  "tuesday"
+    t.boolean  "wednesday"
+    t.boolean  "thursday"
+    t.boolean  "friday"
+    t.boolean  "saturday"
+    t.boolean  "sunday"
   end
 
   add_index "services", ["user_id"], name: "index_services_on_user_id", using: :btree

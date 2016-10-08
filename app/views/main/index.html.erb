@@ -1,20 +1,22 @@
 <!-- test -->
-<section class="intro-header">
-	<div class="jumbotron">
-	  <h1 class="text-center">Hello, world!</h1>
-	  <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eum molestiae architecto dolorem totam dolore.</p>
-	  <section class="row">
-	  	<section class="col-md-6 col-md-offset-3">
-            <%= form_tag services_path, :method => 'get', class: "input-group input-group-lg" do %>
-              <%= text_field_tag "input_search", nil, class: 'form-control' %>
-              <span class="input-group-btn ">
-                <%= submit_tag "Buscar", class: "btn btn-primary" %>
-              </span>
-            <% end %>
-	  	</section>
-	  </section>
-	</div>
-</section>
+<div class="intro" style="background-image: url(<%= asset_path 'bg3.jpg' %>);">
+  <section class="intro-header">
+  	<div class="jumbotron">
+  	  <h1 class="text-center">Hello, world!</h1>
+  	  <p class="text-center">Si quieres ver todos los anuncios, haz click en buscar</p>
+  	  <section class="row">
+  	  	<section class="col-md-6 col-md-offset-3">
+              <%= form_tag services_path, :method => 'get', class: "input-group input-group-lg" do %>
+                <%= text_field_tag "input_search", nil, class: 'form-control' %>
+                <span class="input-group-btn ">
+                  <%= submit_tag "Buscar", class: "btn btn-primary" %>
+                </span>
+              <% end %>
+  	  	</section>
+  	  </section>
+  	</div>
+  </section>
+</div>
 
 <div class="row">
     <div class="col-md-12">

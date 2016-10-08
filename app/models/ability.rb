@@ -13,6 +13,7 @@ class Ability
     can :create, Service
     can :update, Service
     can :create, Comment
+    can :read, Category
   elsif user.guest?
     can :read, Service
     can :read, Comment
