@@ -11,19 +11,54 @@
             <%= image_tag @service.photo %>
             <div class="caption-full">
                 <h4><%= @service.title%></h4>
-                <p><span class="glyphicon glyphicon-earphone"></span> <%= @service.phone.present? ? "(+56) #{@service.phone}" : "No específica" %></p>
-                <p><span class="glyphicon glyphicon-phone-alt"></span> <%=@service.telephone.present? ? @service.telephone : "No específica" %></p>
-                <p><span class="glyphicon glyphicon-home"></span> <%= @service.address.present? ? @service.address : "No específica"%></p>
-                <p><span class="glyphicon glyphicon-envelope"></span> <%=@service.email.present? ? @service.email : "No específica"%></p>
-                <p><span class="glyphicon glyphicon-picture"></span> <%=@service.website.present? ? @service.website : "No específica"%></p>
-                <p><span class="glyphicon glyphicon-calendar"></span> Dias de atención: <%=@service.monday ? "Lunes" : "" %>
-                                                                                        <%=@service.tuesday ? "Martes" : "" %>
-                                                                                        <%=@service.wednesday ? "Miercoles" : "" %>
-                                                                                        <%=@service.thursday ? "Jueves" : "" %>
-                                                                                        <%=@service.friday ? "Viernes" : "" %>
-                                                                                        <%=@service.saturday ? "Sabado" : "" %>
-                                                                                        <%=@service.sunday ? "Domingo" : "" %>
-                                                                                        </p>
+                <% if @service.phone.present? %>
+                  <p><span class="glyphicon glyphicon-earphone"></span> <%= "(+56) #{@service.phone}" %></p>
+                <%end%>
+
+                <% if @service.telephone.present? %>
+                  <p><span class="glyphicon glyphicon-phone-alt"></span> <%=@service.telephone %></p>
+                <%end%>
+
+                <% if @service.address.present? %>
+                  <p><span class="glyphicon glyphicon-home"></span> <%= @service.address %></p>
+                <%end%>
+
+                <% if @service.telephone.present? %>
+                  <p><span class="glyphicon glyphicon-home"></span> <%= @service.address.present? ? @service.address : "No específica"%></p>
+                <%end%>
+
+                <% if @service.telephone.present? %>
+                  <p><span class="glyphicon glyphicon-envelope"></span> <%=@service.email %></p>
+                <%end%>
+
+                <% if @service.telephone.present? %>
+                  <p><span class="glyphicon glyphicon-picture"></span> <%=@service.website %></p>
+                <%end%>
+                
+                <% if @service.monday.present? || @service.tuesday.present? || @service.wednesday.present? || @service.thursday.present? || @service.friday.present? || @service.saturday.present? || @service.sunday.present? %>
+                  <p><span class="glyphicon glyphicon-calendar"></span> Dias de atención: <%=@service.monday ? "Lunes" : "" %>
+                                                                                          <%=@service.tuesday ? "Martes" : "" %>
+                                                                                          <%=@service.wednesday ? "Miercoles" : "" %>
+                                                                                          <%=@service.thursday ? "Jueves" : "" %>
+                                                                                          <%=@service.friday ? "Viernes" : "" %>
+                                                                                          <%=@service.saturday ? "Sabado" : "" %>
+                                                                                          <%=@service.sunday ? "Domingo" : "" %>
+                <%end%>
+
+                <% if @service.morning_start.present? && @service.morning_end.present? %>
+                  <p>
+                    <span class="glyphicon glyphicon-time "></span> 
+                    Mañana: <%= @service.morning_start.strftime("%H:%M") %> - <%= @service.morning_end.strftime("%H:%M") %>
+                  </p>
+                <%end%>
+
+                <% if @service.afternoon_start.present? && @service.afternoon_end.present? %>
+                  <p>
+                  <span class="glyphicon glyphicon-time "></span> 
+                    Tarde: <%= @service.afternoon_start.strftime("%H:%M") %> - <%= @service.afternoon_end.strftime("%H:%M") %>
+                  </p>
+                <%end%>
+                
                 <p><%= @service.description %></p>
             </div>
             <div class="ratings">

@@ -10,55 +10,70 @@
     </div>
   <% end %>
   <div class="form-group">
-    <%= f.label :title%><br>
+    <%= f.label :title, 'Titulo'%><br>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :description %><br>
+    <%= f.label :description, 'Descripción' %><br>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :address %><br>
+    <%= f.label :address, 'Dirección' %><br>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :email %><br>
+    <%= f.label :email, 'Correo electronico' %><br>
     <%= f.text_field :email, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :phone %><br>
+    <%= f.label :phone, 'Celular'%><br>
     <%= f.text_field :phone, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :telephone %><br>
+    <%= f.label :telephone, 'Telefono' %><br>
     <%= f.text_field :telephone, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :website %><br>
+    <%= f.label :website, 'Sitio web' %><br>
     <%= f.text_field :website, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.label :monday, 'Días de atención' %><br>
+
     <%= f.check_box :monday %>
-    <%= f.label :monday %><br>
+    <%= f.label :monday, 'Lunes' %><br>
 
     <%= f.check_box :tuesday %>
-    <%= f.label :tuesday %><br>
+    <%= f.label :tuesday, 'Martes' %><br>
 
     <%= f.check_box :wednesday %>
-    <%= f.label :wednesday %><br>
+    <%= f.label :wednesday, 'Miercoles' %><br>
 
     <%= f.check_box :thursday %>
-    <%= f.label :thursday %><br>
+    <%= f.label :thursday, 'Jueves' %><br>
 
     <%= f.check_box :friday %>
-    <%= f.label :friday %><br>
+    <%= f.label :friday, 'Viernes' %><br>
 
     <%= f.check_box :saturday %>
-    <%= f.label :saturday %><br>
+    <%= f.label :saturday, 'Sabado' %><br>
 
     <%= f.check_box :sunday %>
-    <%= f.label :sunday %><br>
+    <%= f.label :sunday, 'Domingo' %><br>
   </div>
+
+  <div class="form-group">
+    <%= f.label :morning_start, "Horario de mañana" %><br>
+    <p>Desde: </p><%= f.time_select :morning_start, {:default => {:hour => '10', :minute => '30'}} %>
+    <p>Hasta: </p><%= f.time_select :morning_end, {:default => {:hour => '10', :minute => '30'}} %>
+  </div>
+  
+  <div class="form-group">
+  <%= f.label :afternoon_start, "Horario de tarde" %><br>
+    <p>Desde: </p><%= f.time_select :afternoon_start, {:default => {:hour => '10', :minute => '30'}} %>
+    <p>Hasta: </p><%= f.time_select :afternoon_end, {:default => {:hour => '10', :minute => '30'}} %>
+  </div>
+
   <div class="form-group">
     <%= f.label :photo, class: 'label-file btn btn-success' do %>
       <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
@@ -79,14 +94,9 @@
     <%= f.submit 'Subir servicio', class: 'btn btn-primary' %>
   </div>
 <% end %>
+  
 
-<script>
-    $(".input-file").change(function(e){
-      var file_name = e.target.value
 
-      $(".label-file").text(file_name)
-    }) 
-</script>       
 
 
 
