@@ -64,14 +64,14 @@
 
   <div class="form-group">
     <%= f.label :morning_start, "Horario de mañana" %><br>
-    <p>Desde: </p><%= f.time_select :morning_start, {:default => {:hour => '10', :minute => '30'}} %>
-    <p>Hasta: </p><%= f.time_select :morning_end, {:default => {:hour => '10', :minute => '30'}} %>
+    <span>Desde: </span><%= f.time_select :morning_start, {:default => {:hour => '09', :minute => '30'}} %>
+    <span>Hasta: </span><%= f.time_select :morning_end, {:default => {:hour => '12', :minute => '00'}} %>
   </div>
   
   <div class="form-group">
   <%= f.label :afternoon_start, "Horario de tarde" %><br>
-    <p>Desde: </p><%= f.time_select :afternoon_start, {:default => {:hour => '10', :minute => '30'}} %>
-    <p>Hasta: </p><%= f.time_select :afternoon_end, {:default => {:hour => '10', :minute => '30'}} %>
+    <span>Desde: </span><%= f.time_select :afternoon_start, {:default => {:hour => '13', :minute => '30'}} %>
+    <span>Hasta: </span><%= f.time_select :afternoon_end, {:default => {:hour => '19', :minute => '30'}} %>
   </div>
 
   <div class="form-group">

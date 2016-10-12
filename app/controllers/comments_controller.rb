@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @service, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @service, notice: 'Comentario creado' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
