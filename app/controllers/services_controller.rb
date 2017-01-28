@@ -6,8 +6,8 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.search(params[:input_search]).published.order(:visit_count => :desc)
-    @categories = Category.all
+    @service_result = Service.all
+    @categories = Category.all.order(:name)
   end
 
   # GET /services/1
