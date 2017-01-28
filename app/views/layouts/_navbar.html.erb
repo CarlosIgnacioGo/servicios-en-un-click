@@ -28,12 +28,12 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to current_user.email %></li>
-          <li><%= link_to 'Cerrar session', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%=  link_to 'Iniciar session',new_user_session_path%></li>
-          <li><%=  link_to 'Resgistrate',new_user_registration_path%></li>
+          <li><%=  link_to 'Iniciar Sesión',new_user_session_path%></li>
+          <li><%=  link_to 'Regístrate',new_user_registration_path%></li>
         <%end%>
-        <%= link_to 'Subir servicio', new_service_path, class: 'btn btn-primary navbar-btn' %>
+        <%= link_to 'Subir Servicio', new_service_path, class: 'btn btn-primary navbar-btn' %>
       </ul>
     </div>
   </section>
